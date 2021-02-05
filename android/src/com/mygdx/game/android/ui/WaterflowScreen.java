@@ -3,15 +3,19 @@ package com.mygdx.game.android.ui;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.mygdx.game.android.test.DataProvider;
+import com.mygdx.game.android.test.ImageAdapter;
 import com.mygdx.game.android.test.ImageAdapter2;
 import com.mygdx.game.android.test.TestBean;
 import com.mygdx.game.view.GdxBaseGroupView;
 import com.mygdx.game.view.GdxBaseView;
+import com.mygdx.game.view.GdxImageView;
 import com.mygdx.game.view.GdxListView;
 import com.mygdx.game.view.GdxNinePathImageView;
 import com.mygdx.game.view.GdxScrollGroup;
+import com.mygdx.game.view.listener.OnItemClickListener;
 import com.mygdx.game.view.listener.OnItemSelectChangedListener;
 import com.mygdx.game.view.listener.OnKeyListener;
+import com.tt.cache.TextureCache;
 import com.tt.util.Art;
 
 import java.util.ArrayList;
@@ -32,18 +36,18 @@ public class WaterflowScreen extends BaseScreen {
         rootView.setName("rootView");
         rootView.setDescendantFocusability(GdxBaseGroupView.FOCUS_AFTER_DESCENDANTS);
         rootView.setPosition(0, 0);
-        rootView.setSize(1920, 1080 * 2);
+        rootView.setSize(1920, 1080);
         mStage.addActor(rootView);
 
 
         int rowHeight = 400;
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
 
             // test -- gridView
             GdxListView gridView = new GdxListView();
             gridView.setName("gridView-" + i);
             gridView.setDescendantFocusability(GdxBaseGroupView.FOCUS_AFTER_DESCENDANTS);
-            gridView.setPosition(0, 1080 * 2 - (i + 1) * rowHeight);
+            gridView.setPosition(0, (rowHeight + 100) * i);
             gridView.setSize(1920, rowHeight);
             gridView.setHorizontalSpace(30);
             gridView.setVerticalSpace(30);
@@ -95,15 +99,15 @@ public class WaterflowScreen extends BaseScreen {
             }
             adapter.setData(dateList);
             gridView.setAdapter(adapter);
-//            gridView.requestFocus();
+            gridView.requestFocus();
 
 //
-//            gridView.setItemClickListener(new OnItemClickListener() {
-//                @Override
-//                public void onItemClick(Actor actor, int index) {
-//                    System.out.println("onClick == " + index);
-//                }
-//            });
+            gridView.setItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(Actor actor, int index) {
+                    System.out.println("onClick == " + index);
+                }
+            });
 //
 //
             gridView.setItemSelectedChangeListener(new OnItemSelectChangedListener() {
@@ -113,18 +117,6 @@ public class WaterflowScreen extends BaseScreen {
                 }
             });
         }
-
-
-        // --------------------------------------------------------------------------------------------------------------------
-
-//        GdxImageView imageView = new GdxImageView();
-//        imageView.setName("stage-child-name-");
-//        imageView.setSize(250, 200);
-//        imageView.setPosition(30, 200);
-//        //加载本地图片
-//        imageView.setImageTexture(TextureCache.getInstance().load("image/default_snap2.png"));
-//        rootView.addActor(imageView);
-
     }
 
 

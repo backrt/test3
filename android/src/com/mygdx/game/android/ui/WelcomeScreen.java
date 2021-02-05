@@ -34,8 +34,8 @@ public class WelcomeScreen extends BaseScreen {
             if (!isInit) {
                 isInit = true;
 //                WonderGame.getInstance().launcherScreen(WonderGame.IScreenType.SCREEN_MAIN, true);
-                WonderGame.getInstance().launcherScreen(WonderGame.IScreenType.SCREEN_IMAGE, true);
-//                WonderGame.getInstance().launcherScreen(WonderGame.IScreenType.SCREEN_WALTERFLOW, true);
+//                WonderGame.getInstance().launcherScreen(WonderGame.IScreenType.SCREEN_IMAGE, true);
+                WonderGame.getInstance().launcherScreen(WonderGame.IScreenType.SCREEN_WALTERFLOW, true);
 //                WonderGame.getInstance().launcherScreen(WonderGame.IScreenType.SCREEN_ParticleEffect, true);
 //                WonderGame.getInstance().launcherScreen(WonderGame.IScreenType.SCREEN_ParticleEffect2, true);
             }

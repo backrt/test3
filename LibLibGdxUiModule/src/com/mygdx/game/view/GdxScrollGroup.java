@@ -581,6 +581,10 @@ public class GdxScrollGroup extends GdxAbsScrollGroup {
 
 
     private void floatViewAnimation(Actor actor) {
+        if (mFloatView == null) {
+            return;
+        }
+
         mFloatView.clearActions();
 
         mFloatLoc.setZero();

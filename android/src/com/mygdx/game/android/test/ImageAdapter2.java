@@ -89,8 +89,8 @@ public class ImageAdapter2 extends BaseAdapter {
 
     @Override
     protected void updateItemView(Actor actor, int position) {
-//        TestBean bean = (TestBean) this.getItemAtPostion(position);
-//        ImageLoader.getInstance().displayImage(bean.getImg(), actor, options);
+        TestBean bean = (TestBean) this.getItemAtPostion(position);
+        ImageLoader.getInstance().displayImage(bean.getImg(), actor, options);
     }
 
     @Override
