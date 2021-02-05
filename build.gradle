@@ -2,11 +2,11 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
-
+        google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:4.1.1'
     }
 }
 
@@ -29,6 +29,7 @@ allprojects {
     repositories {
         mavenCentral()
         jcenter()
+        google()
 //        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 //        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
